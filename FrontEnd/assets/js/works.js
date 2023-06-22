@@ -9,9 +9,22 @@ class Works {
         
         this.works = works
     }
+    
+    loadEvents() {
+        document.querySelectorAll(".category")
+        .forEach(element => {
+            element.addEventListener("click", (event) => { 
+                this.showCategory(event.target.dataset["category"])
+            })
+        })
+    }
+    
+    show(works) {
+        let gallery = document.querySelector(".gallery")
 
-    show() {
-        this.works.map(work => {
+        gallery.innerHTML = ""
+
+        works.map(work => {
             let figure = document.createElement("figure")
             let image = document.createElement("img")
             let figcaption = document.createElement("figcaption")
@@ -21,19 +34,28 @@ class Works {
             
             figcaption.innerText = work.title
             
-            document.querySelector(".gallery")
-            .appendChild(figure)
-            
+            gallery.appendChild(figure)
             figure.appendChild(image)
             figure.appendChild(figcaption)
-            
         })
+    }
+    
+    showCategory(id) {
+        let filtered = []
+
+        if (id == 0) {
+            filtered = this.works
+        } else {
+            filtered = this.works.filter(work => work.categoryId == id)
+        }
+        
+        this.show(filtered)
     }
 }
 
 const works = new Works
 
-window.addEventListener("load", function(){
-    works.initialise()
-    .then(works.show())
+window.addEventListener("load", function() {
+    works.initialise().then(() => works.show(works.works))
+    works.loadEvents()
 })
