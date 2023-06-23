@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:Sophie-Bluel}/Backend/database.sqlite",
+            "name": "localhost"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}

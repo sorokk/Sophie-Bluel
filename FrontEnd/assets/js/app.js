@@ -58,4 +58,8 @@ const works = new Works
 window.addEventListener("load", function() {
     works.initialise().then(() => works.show(works.works))
     works.loadEvents()
+
+    // if(!localStorage.getItem("token")){
+    //     location.href = "login.html";
+    // }
 })

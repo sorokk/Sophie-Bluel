@@ -13,24 +13,9 @@ main {
     display: flex;
 }
 
-/* .menu-login {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    flex: 1;
-    gap: 20px;
+#errDiv {
+    color: red;
 }
-
-.form-login {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: auto;
-    text-align: left;
-    border-radius: 60px;
-    margin : 2em auto;
-} */
 
 input[type="submit"]{
 	font-family: 'Syne';
