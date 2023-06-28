@@ -29,10 +29,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
-	line-height: 1;
-	background-color: #E5E5E5;
-}
+
 ol, ul {
 	list-style: none;
 }
@@ -50,10 +47,11 @@ table {
 }
 /** end reset css**/
 body {
-	max-width: 1140px;
 	margin:auto;
-	font-family: 'Work Sans' ;
+	font-family: 'Work Sans';
 	font-size: 14px;
+	line-height: 1;
+	background-color: #E5E5E5;
 }
 
 header {
@@ -87,6 +85,12 @@ h2{
 	font-size: 30px;
 	color: #1D6154
 }
+
+.nav {
+	display: flex;
+	justify-content: space-around;
+}
+
 nav ul {
 	display: flex;
 	align-items: center;
@@ -113,8 +117,10 @@ input[type="submit"]{
 	border-radius: 60px ;
 }
 
-.main {
+main {
 	background-color: #E5E5E5;
+	max-width: 1140px;
+	margin: auto;
 }
 
 footer nav ul {
@@ -127,4 +133,9 @@ footer nav ul {
 #logout-link {
 	border: none;
 	background-color: #E5E5E5;
+}
+
+.borderless-button {
+	border: none;
+	background-color: transparent;
 }

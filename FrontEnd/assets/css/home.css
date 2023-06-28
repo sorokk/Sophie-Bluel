@@ -10,12 +10,11 @@
 }
 
 #introduction figure {
-    flex: 1
+    flex: 1;
 }
 
 #introduction img {
     display: block;
-    margin: auto;
     width: 80%;
 }
 

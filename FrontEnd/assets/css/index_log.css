@@ -1,11 +1,3 @@
-body {
-	max-width: 1140px;
-	margin: auto;
-	font-family: 'Work Sans';
-	font-size: 14px;
-	background: #E5E5E5;
-}
-
 .blackBloc {
 	display: flex;
 	flex-direction: row;
@@ -16,16 +8,13 @@ body {
 	height: 30px;
 	gap: 15px;
     padding: 10px;
-    border-radius: 10px;
 }
 
 header {
 	display: flex;
     flex-direction: column;
-	flex: 1;
 	margin: 0px;
 	gap: 25px;
-    width: 100%;
 }
 
 .buttonedition .fa-pen-to-square {
@@ -49,6 +38,11 @@ header {
 	border: none;
 }
 
+.nav {
+	display: flex;
+	justify-content: space-around;
+}
+
 nav ul {
 	display: flex;
 	align-items: center;
@@ -58,6 +52,12 @@ nav ul {
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
+}
+
+.intro-modifier {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
 .modif-projet .fa-pen-to-square {
@@ -73,10 +73,6 @@ nav li {
 .projets .fa-pen-to-square {
 	padding-left: 20px;
 	padding-top: 10px;
-}
-
-.button-projets {
-	border: none;
 }
 
 .modal {
