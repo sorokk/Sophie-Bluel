@@ -22,6 +22,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	background-color: #E5E5E5;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -30,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background-color: #E5E5E5;
 }
 ol, ul {
 	list-style: none;
@@ -111,9 +113,18 @@ input[type="submit"]{
 	border-radius: 60px ;
 }
 
+.main {
+	background-color: #E5E5E5;
+}
+
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
-	margin: 2em
+	margin: 2em;
+	background-color: #E5E5E5;
 }
 
+#logout-link {
+	border: none;
+	background-color: #E5E5E5;
+}

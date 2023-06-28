@@ -28,8 +28,9 @@ header {
     width: 100%;
 }
 
-.fa-pen-to-square {
+.buttonedition .fa-pen-to-square {
     color: white;
+	background-color: black;
     border: none;
 	margin-right: 5px;
 }
@@ -65,7 +66,17 @@ nav li {
 
 .projets {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
+	text-align: center;
+}
+
+.projets .fa-pen-to-square {
+	padding-left: 20px;
+	padding-top: 10px;
+}
+
+.button-projets {
+	border: none;
 }
 
 .modal {

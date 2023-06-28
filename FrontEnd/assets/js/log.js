@@ -1,37 +1,73 @@
-const form = document.getElementById("login-form");
-
-form.addEventListener("submit", async function(e) {
-    e.preventDefault();
-
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("mdp").value;
-
-    try {
-        let response = await fetch("http://localhost:5678/api/users/login", {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ "email": email, "password": password })
-        });
-
-        const data = await response.json();
-
-        if(response.status == "200"){
-            localStorage.setItem("token", data.token);
-            location.href = "index_log.html";
-        } else if(response.status == "404"){
-            const errDiv = document.getElementById("errDiv");
-            errDiv.innerHTML = "Email ou mot de passe incorrect";
+class User {
+    
+    async login(email, password) {
+        try {
+            let data = await this._getToken(email, password);
+            
+            if (this._isValid(data)) {
+                localStorage.setItem("token", data.token);
+                location.href = "index_log.html";
+            } else {
+                const errDiv = document.getElementById("errDiv");
+                errDiv.innerHTML = "Email ou mot de passe incorrect";
+            }
+        } catch (error) {
+            console.log(error);
         }
-    } catch(error) {
-        console.log(error);
     }
-});
+    
+    logout() {
+        localStorage.removeItem('token');
+        location.href = "index.html";
+        console.log("coucou");
+    }
+    
+    async _getToken(email, password) {
+        let response = await fetch("http://localhost:5678/api/users/login", {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ "email": email, "password": password })
+    });
+    
+    let data = await response.json();
+    
+    return data;
+}
+
+_isValid(data) {
+    return data.token;
+}
+
+}
 
 window.addEventListener("load", function() {
-    if(localStorage.getItem("token")){
+    if(localStorage.getItem("token") && location.href.split("/").slice(-1) != "index_log.html"){
         location.href = "index_log.html";
     }
 })
+
+const form = document.getElementById("login-form");
+const user = new User;
+
+
+if (form) {
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("mdp").value;
+        user.login(email, password);
+    });
+}
+
+const logoutLink = document.getElementById("logout-link");
+console.log(logoutLink);
+
+if (logoutLink) { 
+    logoutLink.addEventListener("click", function() {
+        user.logout();
+    })
+}
