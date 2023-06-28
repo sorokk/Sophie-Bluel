@@ -20,7 +20,7 @@ form.addEventListener("submit", async function(e) {
 
         if(response.status == "200"){
             localStorage.setItem("token", data.token);
-            location.href = "index.html";
+            location.href = "index_log.html";
         } else if(response.status == "404"){
             const errDiv = document.getElementById("errDiv");
             errDiv.innerHTML = "Email ou mot de passe incorrect";
@@ -32,6 +32,6 @@ form.addEventListener("submit", async function(e) {
 
 window.addEventListener("load", function() {
     if(localStorage.getItem("token")){
-        location.href = "index.html";
+        location.href = "index_log.html";
     }
 })

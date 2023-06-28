@@ -62,4 +62,12 @@ window.addEventListener("load", function() {
     // if(!localStorage.getItem("token")){
     //     location.href = "login.html";
     // }
+
+    //-----------------------------
+    // Event listener vérifiant que l'utilisateur est connecté
+    //-----------------------------
+    // if(!localStorage.getItem("token")){
+    //     const portfolio = window.document.getElementById("portfolio")
+    //     portfolio.style.display = "none";
+    // }
 })

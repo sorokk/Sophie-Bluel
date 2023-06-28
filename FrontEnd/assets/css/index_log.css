@@ -1,0 +1,102 @@
+body {
+	max-width: 1140px;
+	margin: auto;
+	font-family: 'Work Sans';
+	font-size: 14px;
+	background: #E5E5E5;
+}
+
+.blackBloc {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+    color: white;
+	height: 30px;
+	gap: 15px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+header {
+	display: flex;
+    flex-direction: column;
+	flex: 1;
+	margin: 0px;
+	gap: 25px;
+    width: 100%;
+}
+
+.fa-pen-to-square {
+    color: white;
+    border: none;
+	margin-right: 5px;
+}
+
+.buttonedition {
+    color: white;
+	background-color: black;
+	border: none;
+	gap: 15px;
+}
+
+.publierLesChangements {
+    border-radius: 15px;
+    text-align: center;
+	padding: 7px;
+	border: none;
+}
+
+nav ul {
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+}
+
+nav li {
+	padding: 0 10px;
+	font-size: 1.2em;
+}
+
+.modif-projet .fa-pen-to-square {
+	color: black;
+}
+
+.projets {
+	display: flex;
+	justify-content: space-between;
+}
+
+.modal {
+	position: fixed;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	top: 660px;
+	left: 405px;
+	width: 630px;
+	height: 731px;
+	background-color: white;
+}
+
+.modal-wrapper {
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 600px;
+	max-width: 100vh;
+	padding: 20px;
+	background-color: white;
+}
+
+.photo {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	width: 76px;
+	height: 102px;
+}
+
