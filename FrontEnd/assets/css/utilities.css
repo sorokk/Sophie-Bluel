@@ -1,6 +1,11 @@
 .borderless-button {
 	border: none;
 	background-color: transparent;
+    cursor: pointer;
+}
+
+#button-modifier {
+    cursor: pointer;
 }
 
 .underline {

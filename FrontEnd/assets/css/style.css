@@ -140,4 +140,6 @@ footer nav ul {
 
 #logout-link {
 	border: none;
+	background-color: white;
+	cursor: pointer;
 }
