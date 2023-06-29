@@ -1,9 +1,3 @@
-.nav {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
 #introduction {
     display: flex;
     align-items: center;

@@ -5,21 +5,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./assets/css/style.css">
 	<link rel="stylesheet" href="./assets/css/login.css">
+	<link rel="stylesheet" href="./assets/css/utilities.css">
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<script src="./assets/js/log.js" defer></script>
 	<title>Sophie Bluel - Login</title>
 </head>
 <body>
 	<header>
-		<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
-		<nav>
-			<ul>
-				<li>projets</li>
-				<li>contact</li>
-				<li>login</li>
-				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
-			</ul>
-		</nav>
+		<div class="nav">
+			<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+			<nav>
+				<ul>
+					<li>projets</li>
+					<li>contact</li>
+					<a href="login.html"><li>login</li></a>
+					<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+				</ul>
+			</nav>
+		</div>
 	</header>
 	<main>
 		<section id="login">
@@ -32,6 +35,9 @@
 				<input type="password" name="mdp" id="mdp">
 				<input type="submit" value="Envoyer">
 			</form>
+			<div class="forget-password">
+				<button id="forget-password_button" class="borderless-button underline text-600">Mot de passe oublié</button>
+			</div>
 		</section>
 		
 	</main>

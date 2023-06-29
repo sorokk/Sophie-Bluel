@@ -71,3 +71,15 @@ if (logoutLink) {
         user.logout();
     })
 }
+
+const forgetPasswordButton = document.getElementById("forget-password_button");
+
+if (forgetPasswordButton) {
+    forgetPasswordButton.addEventListener("click", function() {
+        let recoveryEmail = prompt("Veuillez entrer votre email.")
+
+        if (recoveryEmail == "sophie.bluel@test.tld") {
+            window.open('mailto:sophie.bluel@test.tld?subject=Votre mot de passe&body=Voici votre mot de passe: S0phie');
+        }
+    })
+}

@@ -1,0 +1,20 @@
+.borderless-button {
+	border: none;
+	background-color: transparent;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.text-600 {
+	font-weight: 600;
+}
+
+.hidden {
+	display: none;
+}
+
+.flex {
+	display: flex;
+}

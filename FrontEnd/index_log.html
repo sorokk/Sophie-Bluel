@@ -11,8 +11,11 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/home.css">
     <link rel="stylesheet" href="./assets/css/index_log.css">
+    <link rel="stylesheet" href="./assets/css/modal.css">
+	<link rel="stylesheet" href="./assets/css/utilities.css">
     <script src="./assets/js/app.js" defer></script>
     <script src="./assets/js/log.js" defer></script>
+    <script src="./assets/js/modal.js" defer></script>
     <script src="https://kit.fontawesome.com/1b69662f36.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -54,7 +57,7 @@
         <section id="portfolio">
             <div class="projets">
                 <h2>Mes Projets</h2>
-                <div class="modif-projet">
+                <div id="modif-projet">
                     <i class="fa-regular fa-pen-to-square"></i>
                     <button id="button-projets" class="borderless-button">modifier</button>
                 </div>
@@ -62,66 +65,7 @@
             
             <div class="gallery"></div>
         </section>
-        
-        
-        
-        <aside id="modal1" class="modal" aria-hidden="false" role="dialog" aria-modal="false">
-            <div class="modal-wrapper">
-                
-                <div class="gallery-modal">
-                    <div class="photo">
-                        <img src="./assets/images/abajour-tahina.png" alt="Photo 1">
-                        <button class="edit-button">Éditer</button>
-                    </div>
-                    <div class="photo">
-                        <img src="./assets/images/appartement-paris-v.png" alt="Photo 2">
-                        <button class="edit-button">Éditer</button>
-                    </div>
-                    <div class="photo">
-                        <img src="./assets/images/restaurant-sushisen-londres.png" alt="Photo 3">
-                        <button class="edit-button">Éditer</button>
-                    </div>
-                    <div class="photo">
-                        <img src="./assets/images/la-balisiere.png" alt="Photo 4">
-                        <button class="edit-button">Éditer</button>
-                    </div>
-                    <div class="photo">
-                        <img src="./assets/images/structures-thermopolis.png" alt="Photo 5">
-                        <button class="edit-button">Éditer</button>
-                    </div>
-                    <div class="photo">
-                        <img src="./assets/images/appartement-paris-x.png" alt="Photo 6">
-                        <button class="edit-button">Éditer</button>
-                    </div>
-                    <div class="photo">
-                        <img src="./assets/images/villa-ferneze.png" alt="Photo 7">
-                        <button class="edit-button">Éditer</button>
-                    </div>
-                    <div class="photo">
-                        <img src="./assets/images/appartement-paris-xviii.png" alt="Photo 8">
-                        <button class="edit-button">Éditer</button>
-                    </div>
-                    <div class="photo">
-                        <img src="./assets/images/le-coteau-cassis.png" alt="Photo 9">
-                        <button class="edit-button">Éditer</button>
-                    </div>
-                    <div class="photo">
-                        <img src="./assets/images/bar-lullaby-paris.png" alt="Photo 10">
-                        <button class="edit-button">Éditer</button>
-                    </div>
-                    <div class="photo">
-                        <img src="./assets/images/hotel-first-arte-new-delhi.png" alt="Photo 11">
-                        <button class="edit-button">Éditer</button>
-                    </div>
-                    
-                    <div class="bottom-buttons">
-                        <button id="add-photo-button">Ajouter une photo</button>
-                        <button id="delete-photo-button">Supprimer une photo</button>
-                    </div>
-                </div>
-            </div>
-        </aside>
-        
+
         <section id="contact">
             <h2>Contact</h2>
             <p>Vous avez un projet ? Discutons-en !</p>
@@ -144,5 +88,31 @@
             </ul>
         </nav>
     </footer>
+        <div id="project-modal-container" class="modal-container hidden">
+            <div id="project-modal" class="modal">
+                <div id="project-modal-close" class="modal-close">
+                    <i id="project-modal-close-icon" class="fa-solid fa-xmark"></i>
+                </div>
+
+                <div class="modal-header">
+                    <h3>Galerie Photo</h3>
+                </div>
+
+                <div class="modal-body">
+
+                </div>
+
+                <hr>
+
+                <div class="modal-footer">
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
 </body>
 </html>

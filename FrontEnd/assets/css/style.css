@@ -16,18 +16,28 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
+	margin: 0; 
 	padding: 0;
 	border: 0;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-	background-color: #E5E5E5;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
+}
+
+html {
+    height: 100%; 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+	background-color: #FFFEF8;
 }
 
 ol, ul {
@@ -51,13 +61,18 @@ body {
 	font-family: 'Work Sans';
 	font-size: 14px;
 	line-height: 1;
-	background-color: #E5E5E5;
 }
 
 header {
 	display: flex;
-	justify-content: space-between;
 	margin: 50px 0;
+}
+
+.nav {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 75px;
+	width: 100%;
 }
 
 section {
@@ -84,11 +99,6 @@ h2{
 	font-weight: 700;
 	font-size: 30px;
 	color: #1D6154
-}
-
-.nav {
-	display: flex;
-	justify-content: space-around;
 }
 
 nav ul {
@@ -118,7 +128,6 @@ input[type="submit"]{
 }
 
 main {
-	background-color: #E5E5E5;
 	max-width: 1140px;
 	margin: auto;
 }
@@ -127,15 +136,8 @@ footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em;
-	background-color: #E5E5E5;
 }
 
 #logout-link {
 	border: none;
-	background-color: #E5E5E5;
-}
-
-.borderless-button {
-	border: none;
-	background-color: transparent;
 }

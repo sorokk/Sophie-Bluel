@@ -21,9 +21,9 @@ class Works {
     
     show(works) {
         let gallery = document.querySelector(".gallery")
-
+        
         gallery.innerHTML = ""
-
+        
         works.map(work => {
             let figure = document.createElement("figure")
             let image = document.createElement("img")
@@ -42,7 +42,7 @@ class Works {
     
     showCategory(id) {
         let filtered = []
-
+        
         if (id == 0) {
             filtered = this.works
         } else {
@@ -58,16 +58,4 @@ const works = new Works
 window.addEventListener("load", function() {
     works.initialise().then(() => works.show(works.works))
     works.loadEvents()
-
-    // if(!localStorage.getItem("token")){
-    //     location.href = "login.html";
-    // }
-
-    //-----------------------------
-    // Event listener vérifiant que l'utilisateur est connecté
-    //-----------------------------
-    // if(!localStorage.getItem("token")){
-    //     const portfolio = window.document.getElementById("portfolio")
-    //     portfolio.style.display = "none";
-    // }
 })

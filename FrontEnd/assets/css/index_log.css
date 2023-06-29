@@ -17,6 +17,10 @@ header {
 	gap: 25px;
 }
 
+.nav {
+	width: auto;
+}
+
 .buttonedition .fa-pen-to-square {
     color: white;
 	background-color: black;
@@ -38,29 +42,13 @@ header {
 	border: none;
 }
 
-.nav {
-	display: flex;
-	justify-content: space-around;
-}
-
-nav ul {
-	display: flex;
-	align-items: center;
-	list-style-type: none;
-}
-
-nav li {
-	padding: 0 10px;
-	font-size: 1.2em;
-}
-
 .intro-modifier {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
 }
 
-.modif-projet .fa-pen-to-square {
+#modif-projet .fa-pen-to-square {
 	color: black;
 }
 
@@ -73,28 +61,6 @@ nav li {
 .projets .fa-pen-to-square {
 	padding-left: 20px;
 	padding-top: 10px;
-}
-
-.modal {
-	position: fixed;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	top: 660px;
-	left: 405px;
-	width: 630px;
-	height: 731px;
-	background-color: white;
-}
-
-.modal-wrapper {
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	width: 600px;
-	max-width: 100vh;
-	padding: 20px;
-	background-color: white;
 }
 
 .photo {
