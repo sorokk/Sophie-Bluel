@@ -72,3 +72,20 @@ header {
 	width: 76px;
 	height: 102px;
 }
+
+.add-photo {
+	border-radius: 60px;
+	border: none;
+	color: white;
+	background-color: #1D6154;
+	height: 25px;
+	width: 200px;
+	cursor: pointer;
+}
+
+.supp-photo {
+	border: none;
+	color: red;
+	background-color: white;
+	cursor: pointer;
+}
