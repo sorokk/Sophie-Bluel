@@ -78,9 +78,9 @@ header {
 	border: none;
 	color: white;
 	background-color: #1D6154;
-	height: 25px;
 	width: 200px;
 	cursor: pointer;
+	padding: 10px 20px;
 }
 
 .supp-photo {
@@ -88,4 +88,6 @@ header {
 	color: red;
 	background-color: white;
 	cursor: pointer;
+	font-size: 14px;
+	font-weight: lighter;
 }
