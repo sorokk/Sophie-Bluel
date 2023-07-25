@@ -6,9 +6,9 @@ class Modal {
     }
 
     hide(eventId) {
-        if (eventId == "project-modal-container" || eventId == "project-modal-close" || eventId == "project-modal-close-icon") {
+        // if (eventId == "project-modal-container" || eventId == "project-modal-close" || eventId == "project-modal-close-icon") {
             this.modal.classList.replace("grid", "hidden")
-        } 
+        // } 
     }
     
     show(){
@@ -21,20 +21,43 @@ const projectModalContainer = document.getElementById("project-modal-container")
 const projectModalButton = document.getElementById("modif-projet")
 const modal = new Modal(projectModalContainer)
 
+const modalCloseAddPhoto = document.getElementById("project-modal-add-photo-close")
+const projectModalContainerAddPhoto = document.getElementById("project-modal-add-photo-container")
+const projectModalButtonAddPhoto = document.getElementById("add-photo")
+const modalAddPhoto = new Modal(projectModalContainerAddPhoto)
+
 projectModalButton.addEventListener("click", () => {
     modal.show()
 })
 modalClose.addEventListener("click", (event) => {
     modal.hide(event.target.id)
 })
-projectModalContainer.addEventListener("click", (event) => {
+// projectModalContainer.addEventListener("click", (event) => {
+//     modal.hide(event.target.id)
+// })
+
+projectModalButtonAddPhoto.addEventListener("click", (event) => {
+    modalAddPhoto.show()
     modal.hide(event.target.id)
+})
+modalCloseAddPhoto.addEventListener("click", (event) => {
+    modalAddPhoto.hide(event.target.id)
+})
+// projectModalContainerAddPhoto.addEventListener("click", (event) => {
+//     modalAddPhoto.hide(event.target.id)
+// })
+
+let imgPreviewPhoto = document.getElementById("previewPhoto")
+let photoUrl = document.getElementById("photoUrl")
+photoUrl.addEventListener("change", (event) => {
+    const [file] = photoUrl.files
+    if(file){
+        imgPreviewPhoto.src = URL.createObjectURL(file)
+    }
 })
 
 window.addEventListener("load", async function() {
     let modalBody = document.getElementById("modal-body");
-
-    console.log(modalBody);
 
     let works = await fetch("http://localhost:5678/api/works")
     .then(function(response) {
@@ -69,7 +92,67 @@ window.addEventListener("load", async function() {
         figure.appendChild(figcaption)
     })
 
+    let selectCategories = document.getElementById("photoCategory")
+
+    let categories = await fetch("http://localhost:5678/api/categories")
+    .then(function(response){
+        return response.json();
+    })
+
+    categories.map((category) => {
+        const optionCat = document.createElement("option");
+        optionCat.value = category.id;
+        optionCat.text = category.name;
+
+        selectCategories.appendChild(optionCat);
+    })
 })
+
+function validateFileType(){
+    var fileName = document.getElementById("photoUrl").value;
+    var idxDot = fileName.lastIndexOf(".") + 1;
+    var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+    if (extFile=="jpg" || extFile=="jpeg" || extFile=="png"){
+        return true;
+    }else{
+        alert("Only jpg/jpeg and png files are allowed!");
+    }   
+}
+
+const formPhoto = document.getElementById("form-add-photo");
+formPhoto.addEventListener("submit", function(event){
+    console.log("submitted");
+    event.preventDefault();
+    submitForm();
+})
+async function submitForm(){
+    let photoUrl = document.getElementById("photoUrl");
+    let token = localStorage.getItem("token");
+    let title = document.getElementById("photoTitle").value;
+    let category = document.getElementById("photoCategory").value;
+    const file = photoUrl.files[0];
+
+    let formData = new FormData();
+    formData.append("image", file);
+    formData.append("title", title);
+    formData.append("category", category);
+    if(file){
+        let response = await fetch("http://localhost:5678/api/works",
+            {
+                method: "POST",
+                headers: {
+                    "accept": "application/json",
+                    "Authorization": `Bearer ${token}`
+                },
+                body: formData
+            }
+        )
+        .then(function(response){
+            if(response.status == "201")
+            location.reload();
+        })
+    }
+}
 
 // ///////////////////////// Générer photo modale /////////////////////////////
 // function genererPhotosModal(photosModal) {

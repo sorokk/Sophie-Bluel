@@ -83,6 +83,16 @@ header {
 	padding: 10px 20px;
 }
 
+.save-photo {
+	border-radius: 60px;
+	border: none;
+	color: white;
+	background-color: #1D6154;
+	width: 200px;
+	cursor: pointer;
+	padding: 10px 20px;
+}
+
 .supp-photo {
 	border: none;
 	color: red;

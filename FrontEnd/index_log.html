@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./assets/css/home.css">
     <link rel="stylesheet" href="./assets/css/index_log.css">
     <link rel="stylesheet" href="./assets/css/modal.css">
-	<link rel="stylesheet" href="./assets/css/utilities.css">
+    <link rel="stylesheet" href="./assets/css/utilities.css">
     <script src="./assets/js/app.js" defer></script>
     <script src="./assets/js/log.js" defer></script>
     <script src="./assets/js/modal.js" defer></script>
@@ -65,7 +65,7 @@
             
             <div class="gallery"></div>
         </section>
-
+        
         <section id="contact">
             <h2>Contact</h2>
             <p>Vous avez un projet ? Discutons-en !</p>
@@ -88,32 +88,71 @@
             </ul>
         </nav>
     </footer>
-        <div id="project-modal-container" class="modal-container hidden">
-            <div id="project-modal" class="modal">
-                <div id="project-modal-close" class="modal-close">
-                    <i id="project-modal-close-icon" class="fa-solid fa-xmark"></i>
-                </div>
-
-                <div class="modal-header">
-                    <h3>Galerie Photo</h3>
-                </div>
-
-                <div id="modal-body" class="modal-body"> 
-
-                </div>
-
-                <hr noshade>
-
-                <div class="modal-footer">
-                    <button id="add-photo" class="add-photo">Ajouter une photo</button>
-                    <button id="supp-photo" class="supp-photo">Supprimer la galerie</button>
-
-                </div>
+    <div id="project-modal-container" class="modal-container hidden">
+        <div id="project-modal" class="modal">
+            <div id="project-modal-close" class="modal-close">
+                <i id="project-modal-close-icon" class="fa-solid fa-xmark"></i>
+            </div>
+            
+            <div class="modal-header">
+                <h3>Galerie Photo</h3>
+            </div>
+            
+            <div id="modal-body" class="modal-body"> 
+                
+            </div>
+            
+            <hr noshade>
+            
+            <div class="modal-footer">
+                <button id="add-photo" class="add-photo">Ajouter une photo</button>
+                <button id="supp-photo" class="supp-photo">Supprimer la galerie</button>
+                
             </div>
         </div>
-
-
-
-
+    </div>
+    
+    <div id="project-modal-add-photo-container" class="modal-container-add-photo hidden">
+        <div id="project-modal-add-photo" class="modal-add-photo">
+            <div id="project-modal-add-photo-close" class="modal-close-add-photo">
+                <i id="project-modal-close-icon" class="fa-solid fa-xmark"></i>
+            </div>
+            
+            <div class="modal-header-add-photo">
+                <h3>Ajout photo</h3>
+            </div>
+            
+            <form id="form-add-photo">
+                <div id="modal-body-add-photo" class="modal-body-add-photo">
+                    <div class="modal-body-add-photo-img">
+                        <img id="previewPhoto" src="assets/icons/img_default.png" alt="your image">
+                        <label for="photoUrl" class="custom-file-upload">
+                            <i class="fa fa-plus"></i> Ajouter photo
+                        </label>
+                        <input type="file" name="photoUrl" id="photoUrl" accept=".jpg,.jpeg,.png" onchange="validateFileType()" required>
+                        <p class="photoUrl-text">jpg, png : 4mo max</p>
+                    </div>
+                    <div class="modal-body-add-photo-inputs">
+                        <label for="photoTitle">Titre</label>
+                        <input id="photoTitle" name="photoTitle" type="text" required>
+                        <br />
+                        <label for="photoCategory">Catégorie</label>
+                        <select name="photoCategory" id="photoCategory">
+                        </select>
+                    </div>
+                </div>
+                
+                <hr noshade>
+                
+                <div class="modal-footer-add-photo">
+                    <button type="submit" id="save-photo" class="save-photo">Valider</button>     
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    
+    
+    
 </body>
 </html>
