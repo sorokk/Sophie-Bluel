@@ -79,8 +79,29 @@ window.addEventListener("load", async function() {
         let trashIcon = document.createElement("i")
         trashIcon.setAttribute("class", "fa-solid fa-trash-can")
 
-        removeButton.addEventListener("click", function(){
+        removeButton.addEventListener("click", async function(){
+            let token = localStorage.getItem("token");
+            let response = await fetch("http://localhost:5678/api/works/"+image.id,
+            {
+                method: "DELETE",
+                _headers: {
+                    "accept": "application/json",
+                    "Authorization": `Bearer ${token}`
+                },
+                get headers() {
+                    return this._headers
+                },
+                set headers(value) {
+                    this._headers = value
+                },
+            }
+        )
+        .then(function(response){
+            if(response.status == "201")
+            location.reload();
+        })
             figure.remove();
+        
         })
         
         figcaption.innerText = "éditer"
